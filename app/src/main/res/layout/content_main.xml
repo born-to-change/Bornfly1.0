@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,13 +9,89 @@
     tools:showIn="@layout/app_bar_main"
     tools:context="bornfly.myrevive.MainActivity">
 
+    <ViewFlipper
+        android:id="@+id/details"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="224dp"
+            android:src="@drawable/summer"></ImageView>
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="222dp"
+            android:src="@drawable/autumn"></ImageView>
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="222dp"
+            android:src="@drawable/winter"></ImageView>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="222dp"
+            android:src="@drawable/spring"></ImageView>
+    </ViewFlipper>
+    <Button
+        android:id="@+id/plan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/plan"
+        android:layout_marginRight="27dp"
+        android:layout_marginEnd="27dp"
+        android:layout_alignBaseline="@+id/history"
+        android:layout_alignBottom="@+id/history"
+        android:layout_toLeftOf="@+id/history"
+        android:layout_toStartOf="@+id/history" />
+    <Button
+        android:id="@+id/history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/history"
+        android:layout_marginTop="46dp"
+        android:layout_below="@+id/details"
+        android:layout_centerHorizontal="true" />
+    <Button
+        android:id="@+id/write"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/write"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_alignTop="@+id/history"
+        android:layout_toRightOf="@+id/history"
+        android:layout_toEndOf="@+id/history" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</android.support.constraint.ConstraintLayout>
+        android:text="计划表"
+        android:layout_below="@+id/plan"
+        android:layout_alignLeft="@+id/plan"
+        android:layout_alignStart="@+id/plan"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="日记"
+    android:layout_below="@+id/write"
+    android:layout_alignRight="@+id/write"
+    android:layout_alignEnd="@+id/write"
+    android:layout_marginRight="28dp"
+    android:layout_marginEnd="28dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="奋斗史"
+        android:layout_below="@+id/write"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
