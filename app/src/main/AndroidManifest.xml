@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher2"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -23,8 +23,24 @@
     </activity>
         <activity android:name=".Resetpwd"/>
         <activity android:name=".Register"/>
-        <activity android:name=".Weakview"/>
-
+        <activity android:name=".Weekview"/>
+        <activity android:name="com.tops.notes.NotesActivity"/>
+        <activity
+            android:name="com.tops.notes.AtyEditNote"
+            android:configChanges="keyboardHidden|orientation" >
+        </activity>
+        <activity
+            android:name="com.tops.notes.AtyPhotoViewer"
+            android:configChanges="keyboardHidden|orientation" >
+        </activity>
+        <activity
+            android:name="com.tops.notes.AtyVideoViewer"
+            android:configChanges="keyboardHidden|orientation" >
+        </activity>
+        <activity android:name=".NoteActivity"/>
+        <activity android:name=".noteEdit"/>
+        <activity android:name=".PlanTimeSet"/>
+        <activity android:name=".PlanActivity"/>
 
     </application>
 

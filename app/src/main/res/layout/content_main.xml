@@ -78,11 +78,12 @@
         android:layout_alignLeft="@+id/plan"
         android:layout_alignStart="@+id/plan"
         android:layout_marginLeft="23dp"
-        android:layout_marginStart="23dp" />
+        android:layout_marginStart="23dp"
+        android:id="@+id/textView3" />
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="日记"
+    android:text="成长日记"
     android:layout_below="@+id/write"
     android:layout_alignRight="@+id/write"
     android:layout_alignEnd="@+id/write"
@@ -93,5 +94,21 @@
         android:layout_height="wrap_content"
         android:text="奋斗史"
         android:layout_below="@+id/write"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView2" />
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/must"
+        android:id="@+id/must"
+        android:layout_above="@+id/textView5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="每日必做项"
+        android:id="@+id/textView5"
+        android:layout_alignParentBottom="true"
+        />
 </RelativeLayout>

@@ -19,7 +19,9 @@ import android.widget.ViewFlipper;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private ViewFlipper viewFlipper;
-
+    private Button showhistory;
+    private Button showwrite;
+    private Button showmust;
 
 
     @Override
@@ -28,14 +30,37 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        Button bn1=(Button) findViewById(R.id.history);
-        bn1.setOnClickListener(new View.OnClickListener() {
+        showhistory=(Button) findViewById(R.id.plan);
+        showhistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this,Weakview.class);
-                startActivity(i);
+                Intent intent1 = new Intent(MainActivity.this, PlanActivity.class);
+                startActivity(intent1);
+            }
+        });
 
+        showmust =(Button) findViewById(R.id.must);
+        showmust.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(MainActivity.this,NoteActivity.class);
+                startActivity(intent2);
+            }
+        });
+        showwrite=(Button) findViewById(R.id.write);
+        showwrite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,com.tops.notes.NotesActivity.class);
+                startActivity(i);
+            }
+        });
+        showhistory=(Button) findViewById(R.id.history);
+        showhistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(MainActivity.this,Weekview.class);
+                startActivity(intent1);
             }
         });
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -77,7 +102,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.main2, menu);
         return true;
     }
 

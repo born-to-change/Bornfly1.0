@@ -1,4 +1,4 @@
-package bornfly.myrevive;
+package bornfly.myrevive.DB;
 
 /**
  * Created by Administrator on 2017/5/12 0012.
@@ -11,23 +11,27 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import bornfly.myrevive.UserData;
+
 public class UserDataManager {             //用户数据管理类
     //一些宏定义和声明
     private static final String TAG = "UserDataManager";
-    private static final String DB_NAME = "user_data";
+    private static final String DB_NAME = "mydb";
     private static final String TABLE_NAME = "users";
     public static final String ID = "_id";
     public static final String USER_NAME = "user_name";
     public static final String USER_PWD = "user_pwd";
-    //    public static final String SILENT = "silent";
-//    public static final String VIBRATE = "vibrate";
-    private static final int DB_VERSION = 2;
+
+    private static final int DB_VERSION = 1;
     private Context mContext = null;
 
     //创建用户book表
-    private static final String DB_CREATE = "CREATE TABLE " + TABLE_NAME + " ("
+    private static final String USERS_CREATE = "CREATE TABLE " + TABLE_NAME + " ("
             + ID + " integer primary key," + USER_NAME + " varchar,"
             + USER_PWD + " varchar" + ");";
+    private static final String PLAN_CREATE = "create table plantable(_id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT," +
+            "startTime INTEGER,endTime INTEGER," +"reminderWay INT" +
+            "status INT,repeat INT";
 
     private SQLiteDatabase mSQLiteDatabase = null;
     private DataBaseManagementHelper mDatabaseHelper = null;
@@ -43,9 +47,12 @@ public class UserDataManager {             //用户数据管理类
         public void onCreate(SQLiteDatabase db) {
             Log.i(TAG,"db.getVersion()="+db.getVersion());
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME + ";");
-            db.execSQL(DB_CREATE);
-            Log.i(TAG, "db.execSQL(DB_CREATE)");
-            Log.e(TAG, DB_CREATE);
+            db.execSQL(USERS_CREATE);
+            Log.i(TAG, "db.execSQL(USERS_CREATE)");
+            Log.e(TAG, USERS_CREATE);
+            db.execSQL(PLAN_CREATE);
+            Log.i(TAG, "db.execSQL(PLAN_CREATE)");
+            Log.e(TAG, PLAN_CREATE);
         }
 
         @Override

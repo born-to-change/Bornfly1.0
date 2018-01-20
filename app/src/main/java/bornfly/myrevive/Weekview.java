@@ -24,7 +24,7 @@ package bornfly.myrevive;
 /**
  *
  */
-public class Weakview extends Activity implements WeekDayView.MonthChangeListener,
+public class Weekview extends Activity implements WeekDayView.MonthChangeListener,
         WeekDayView.EventClickListener, WeekDayView.EventLongPressListener,WeekDayView.EmptyViewClickListener,WeekDayView.EmptyViewLongPressListener,WeekDayView.ScrollListener {
     //view
     private WeekDayView mWeekView;
@@ -220,23 +220,23 @@ public class Weakview extends Activity implements WeekDayView.MonthChangeListene
 
     @Override
     public void onEventClick(WeekViewEvent event, RectF eventRect) {
-        Toast.makeText(Weakview.this, "Clicked " + event.getName(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(Weekview.this, "Clicked " + event.getName(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onEventLongPress(WeekViewEvent event, RectF eventRect) {
-        Toast.makeText(Weakview.this, "Long pressed event: " + event.getName(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(Weekview.this, "Long pressed event: " + event.getName(), Toast.LENGTH_SHORT).show();
     }
 
 
     @Override
     public void onEmptyViewClicked(Calendar time) {
-        Toast.makeText(Weakview.this, "Empty View clicked " + time.get(Calendar.YEAR) + "/" + time.get(Calendar.MONTH) + "/" + time.get(Calendar.DAY_OF_MONTH), Toast.LENGTH_LONG).show();
+        Toast.makeText(Weekview.this, "Empty View clicked " + time.get(Calendar.YEAR) + "/" + time.get(Calendar.MONTH) + "/" + time.get(Calendar.DAY_OF_MONTH), Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onEmptyViewLongPress(Calendar time) {
-        Toast.makeText(Weakview.this, "Empty View long  clicked " + time.get(Calendar.YEAR) + "/" + time.get(Calendar.MONTH) + "/" + time.get(Calendar.DAY_OF_MONTH), Toast.LENGTH_LONG).show();
+        Toast.makeText(Weekview.this, "Empty View long  clicked " + time.get(Calendar.YEAR) + "/" + time.get(Calendar.MONTH) + "/" + time.get(Calendar.DAY_OF_MONTH), Toast.LENGTH_LONG).show();
 
     }
 

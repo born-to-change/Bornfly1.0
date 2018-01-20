@@ -19,6 +19,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import bornfly.myrevive.DB.UserDataManager;
+
 public class Login extends Activity {                 //登录界面活动
 
     public int pwdresetFlag=0;
